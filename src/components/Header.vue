@@ -67,12 +67,12 @@ export default {
 
 <style lang="scss">
 
+@import "../assets/styles/vars.scss";
 @import "../assets/styles/mixins.scss";
 
 header {
   @include center(align);
-  justify-content: space-around;
-  padding: 20px 0;
+  justify-content: space-between;
 
   ul {
     display: flex;
@@ -81,11 +81,11 @@ header {
 
   li {
     margin: 0 10px;
-    padding: 40px 0;
+    padding: 50px 0;
     &:hover,
     &.active{
       cursor: pointer;
-      border-bottom: 1px solid blue;
+      border-bottom: 4px solid $primary-color;
     }
   }
 }  
