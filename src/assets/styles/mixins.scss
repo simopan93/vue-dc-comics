@@ -1,0 +1,12 @@
+@mixin center($type: "both") {
+  display: flex;
+  @if $type == "justify" {
+    justify-content: center;
+  } @else if $type == "align" {
+    align-items: center;
+  } @else {
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
