@@ -5,7 +5,7 @@
     <ul>
       <li v-for="(item, index) in categories" :key="index"
       :class ="{active: item.current}">
-        {{item.name.toUpperCase()}}
+        <a>{{item.name.toUpperCase()}}</a>
       </li>
     </ul>
   </header>
@@ -82,6 +82,7 @@ header {
   li {
     margin: 0 10px;
     padding: 50px 0;
+    transition: all 0.1s;
     &:hover,
     &.active{
       cursor: pointer;

@@ -221,14 +221,21 @@ export default {
     color: gray;
     margin-bottom: 4px;
 
+
     &:hover{
       cursor: pointer;
+      color: white;
         }
+
       &:first-child{
         color: white;
         font-weight: bold;
         margin-bottom: 15px;
-      }
+        }
+
+        &:first-child:hover{
+          cursor: inherit;
+        }
       }
     }
   }

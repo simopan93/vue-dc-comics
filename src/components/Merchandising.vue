@@ -2,11 +2,13 @@
   
   <section class="merchandising">
     <div class="container">
-      <div v-for="(item,index) in options"
+      <div v-for="(item,index) in ListMercha"
       :key="index"
       class="slot">
-        <img src="../assets/img/buy-comics-digital-comics.png" alt="">
-        <span>{{item.name.toUpperCase()}}</span>
+        <a>
+          <img :src="item.logo" :alt="item.name">
+          <span>{{item.name.toUpperCase()}}</span>
+        </a>
       </div>
     </div>
   </section>
@@ -14,32 +16,15 @@
 </template>
 
 <script>
+
+import ListMercha from "../assets/data/ListMerchandising.js"
+
 export default {
   name: "Merchandising",
+
   data(){
     return{
-      options: [
-        {
-          name: "Digital Comics",
-          logo: "buy-comics-digital-comics.png"
-        },
-        {
-          name: "DC Merchandise",
-          logo: "buy-comics-merchandise.png"
-        },
-        {
-          name: "Subscription",
-          logo: "buy-comics-subscriptions.png"
-        },
-        {
-          name: "Comic Shop Locator",
-          logo: "buy-comics-shop-locator.png"
-        },
-        {
-          name: "DC Power Visa",
-          logo: "buy-dc-power-visa.svg"
-        },
-      ]
+      ListMercha,
     }
   }
 }
@@ -59,18 +44,34 @@ export default {
   }
 
   .slot {
-    @include center();
     width: calc(100% / 5);
     min-width: 170px;
+    height: 50px;
     color: white;
 
-  img {
-    width: 20%;
-  }
+    a{
+      @include center();
+      height: 100%;
 
-    span{
-      margin: 0 10px;
+      &:hover{
+        cursor: pointer;
+        color: lightgray;
+      }
+
+
+      img {
+        width: 20%;
+        height: 100%;
+      }
+
+      span{
+        margin: 0 10px;
+      }
+
+
     }
+
+    
   }
 }
 
